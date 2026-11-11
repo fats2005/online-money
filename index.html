@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoneyGain | Demo Rewards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="logo">$</span> MoneyGain</a>
+    <span class="tag">DEMO REWARDS</span>
+  </header>
+
+  <main class="container">
+    <section id="authView" class="auth-layout">
+      <div class="intro">
+        <div class="eyebrow">WELCOME TO MONEYGAIN</div>
+        <h1>Small actions.<br><span>Growing rewards.</span></h1>
+        <p>Create an account or sign in to explore the MoneyGain demo dashboard.</p>
+        <div class="feature"><b>01</b><span>Email verification for new accounts</span></div>
+        <div class="feature"><b>02</b><span>Personal demo balance and referral link</span></div>
+        <div class="feature"><b>03</b><span>Ad-view flow preview with simulated credits</span></div>
+      </div>
+
+      <div class="card">
+        <div class="tabs">
+          <button id="signupTab" class="tab active">Create account</button>
+          <button id="loginTab" class="tab">Log in</button>
+        </div>
+        <form id="signupForm">
+          <h2>Create your account</h2>
+          <p class="muted">Use a valid email and a strong password.</p>
+          <label>Email address</label>
+          <input id="signupEmail" type="email" placeholder="you@example.com" required autocomplete="email">
+          <label>Password</label>
+          <input id="signupPassword" type="password" placeholder="At least 10 characters" required autocomplete="new-password">
+          <small class="hint">At least 10 characters, including letters, numbers and a symbol.</small>
+          <button class="primary" type="submit">Next <span>→</span></button>
+        </form>
+        <form id="otpForm" class="hidden">
+          <h2>Verify your email</h2>
+          <p class="muted">Enter the 6-digit code sent to your email address.</p>
+          <label>One-time password (OTP)</label>
+          <input id="otpInput" inputmode="numeric" maxlength="6" placeholder="000000" required>
+          <button class="primary" type="submit">Verify & continue <span>→</span></button>
+          <button class="text-btn" type="button" id="backSignup">Back</button>
+        </form>
+        <form id="loginForm" class="hidden">
+          <h2>Welcome back</h2>
+          <p class="muted">Log in with your registered details.</p>
+          <label>Email address</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com" required autocomplete="email">
+          <label>Password</label>
+          <input id="loginPassword" type="password" placeholder="Your password" required autocomplete="current-password">
+          <button class="primary" type="submit">Log in <span>→</span></button>
+        </form>
+        <div id="authMessage" class="message" aria-live="polite"></div>
+        <p class="legal">By continuing, you agree that this is a demonstration website. Demo credits have no cash value.</p>
+      </div>
+    </section>
+
+    <section id="dashboardView" class="hidden">
+      <div class="dash-head">
+        <div><div class="eyebrow">YOUR DASHBOARD</div><h1>Good to see you.</h1><p class="muted" id="welcomeEmail"></p></div>
+        <button id="logoutBtn" class="outline">Log out</button>
+      </div>
+      <div class="balance-card">
+        <div><p class="balance-label">DEMO ACCOUNT BALANCE</p><div class="balance" id="balance">$10.00</div><p class="balance-note">Simulated credits · Not withdrawable</p></div>
+        <div class="balance-icon">$</div>
+      </div>
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-top"><h3>Watch demo ad</h3><span class="pill">+ $10 demo</span></div>
+          <p class="muted">Preview the ad-view interaction. A demo credit is added after the timer finishes. This does not load or interact with real advertisements.</p>
+          <div class="ad-box"><div class="play">▶</div><strong>Sample sponsored content</strong><span>Demo advertisement preview</span></div>
+          <div class="timer" id="adTimer">10</div>
+          <button class="primary" id="watchBtn">Start demo ad</button>
+          <p class="hint" id="adStatus">Complete the 10-second preview to add a simulated credit.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-top"><h3>Invite a friend</h3><span class="pill green">+ $20 demo</span></div>
+          <p class="muted">Share your personal referral link. A simulated referral credit is added when a new user verifies an account using your link.</p>
+          <label>Your referral link</label>
+          <div class="copy-row"><input id="refLink" readonly><button id="copyBtn" class="outline">Copy</button></div>
+          <div class="stats"><div><strong id="refCount">0</strong><span>Verified referrals</span></div><div><strong id="adCount">0</strong><span>Demo ad views</span></div></div>
+        </div>
+      </div>
+      <p class="disclaimer"><b>Important:</b> This is a software prototype. The displayed balance and rewards are simulated and cannot be redeemed, transferred or withdrawn. No real ads are served. Do not present demo credits as guaranteed income.</p>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> MoneyGain · Demo prototype</footer>
+  <script src="app.js"></script>
+</body>
+</html>
